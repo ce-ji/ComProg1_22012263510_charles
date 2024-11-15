@@ -4,7 +4,8 @@ using namespace std;
 int main()
 {
     cout << "Hello, I am Charles !!! Welcome to my first C++ application" << "\n";
-    while (true)
+    //To loop the application
+    while (true){
     string Name;
     cout << "Hey! What is your name: ";
     cin >> Name;
@@ -27,31 +28,38 @@ int main()
     cout << "Not a Leap Year \n";
     /*To know their zodiac sign*/
     if (Month ==12 && Day >=22 || Month ==1 && Day <=19){
-        cout << "Your Zodiac sign is Capricornus";
+        cout << "Your Zodiac sign is Capricornus \n";
     } else if (Month ==1 && Day >=20 || Month==2 && Day <=18){
-        cout << "Your Zodiac sign is Aquarius";
+        cout << "Your Zodiac sign is Aquarius \n";
     } else if (Month ==2 && Day >=19 || Month ==3 && Day <=20){
-        cout << "Your Zodiac sign is Pisces";
+        cout << "Your Zodiac sign is Pisces \n";
     } else if (Month ==3 && Day >=21 || Month ==4 && Day <=19){
-        cout << "Your Zodiac sign is Aries";
+        cout << "Your Zodiac sign is Aries \n";
     } else if (Month ==4 && Day >=20 || Month ==5 && Day <=20){
-        cout << "Your Zodiac sign is Taurus";
+        cout << "Your Zodiac sign is Taurus \n";
     } else if (Month ==5 && Day >=21 || Month ==6 && Day <=21){
-        cout << "Your Zodiac sign is Gemini";
+        cout << "Your Zodiac sign is Gemini \n";
     } else if (Month ==6 && Day >=22 || Month ==7 && Day <=22){
-        cout << "Your Zodiac sign is Cancer";
+        cout << "Your Zodiac sign is Cancer \n";
     } else if (Month ==7 && Day >=23 || Month ==8 && Day <=22){
-        cout << "Your Zodiac sign is Leo";
+        cout << "Your Zodiac sign is Leo \n";
     } else if (Month ==8 && Day >=23 || Month ==9 && Day <=22){
-        cout << "Your Zodiac sign is Virgo";
+        cout << "Your Zodiac sign is Virgo \n";
     } else if (Month ==9 && Day >=23 || Month ==10 && Day <=23){
-        cout << "Your Zodiac sign is Libra";
+        cout << "Your Zodiac sign is Libra \n";
     } else if (Month ==10 && Day >=24 || Month ==11 && Day <=21){
-        cout << "Your Zodiac sign is Scorpius";
+        cout << "Your Zodiac sign is Scorpius \n";
     } else {Month ==11 && Day >=22 || Month ==12 && Day <=21;
-        cout << "Your Zodiac sign is Sagittarius";
+        cout << "Your Zodiac sign is Sagittarius \n";
     }
-
-
+    //Ask if repeat the app or nah
+    char choice;
+    cout << "Do you want to start again? (y/n)";
+    cin >> choice;
+    if (choice =='y' || choice == 'Y'){
+        continue;
+    } else {break;}
+    }
+    cout << "Thank you!";
     return 0;
 }
