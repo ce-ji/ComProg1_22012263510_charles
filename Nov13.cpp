@@ -4,14 +4,17 @@ using namespace std;
 int main()
 {
     cout << "Hello, I am Charles !!! Welcome to my first C++ application" << "\n";
-    //To loop the application
     while (true){
     string Name;
-    cout << "Hey! What is your name: ";
+    cout << "Hello! What is your name: ";
     cin >> Name;
     cout <<"Good Day! "<< Name <<" It's nice to meet you!" << "\n";
-    /*To get their birthday*/
-    cout << "What is your Birthday? \n";
+    cout << "May I know when is your birthday? [Yes/No]  \n";
+    string bdaychoice;
+    cin >> bdaychoice;
+    if (bdaychoice == "Yes" || bdaychoice == "yes"){
+            cout << "Enter birthday MM-DD-YYYY \n";
+    } else{break; cout << "Thank You!" << Name;}
     int Month, Day, Year;
     cout << "Month: ";
     cin >> Month;
@@ -19,14 +22,22 @@ int main()
     cin >> Day;
     cout << "Year: ";
     cin >> Year;
-    /*To know if their birthday is leapyear or nah*/
-    double LeapYear = Year % 4;
-    cout << "The value of year: " << LeapYear <<"\n";
-    if (LeapYear ==0)
-    cout << "I am Leap Year \n";
-    else
-    cout << "Not a Leap Year \n";
-    /*To know their zodiac sign*/
+    //options
+    int options;
+    cout << "What do you want to do? \n[0]Stop\n[1]If you are LeapYear\n[2]What is your Zodiac Sign\n[3]What is your Chinese Zodiac\n[4]Enter new birthday\nOption: ";
+    cin >> options;
+    if (options == 0){
+        break;
+    } else if (options == 1){
+        double LeapYear = Year % 4;
+            if (Year % 100){
+                if (Year % 400){
+                    if (LeapYear == 0){
+                        cout << "Your birthday is in the Leap Year \n";
+                    }   else {cout << "Your birthday is not in the Leap Year \n";}
+                }
+            }
+    } else if (options == 2){
     if (Month ==12 && Day >=22 || Month ==1 && Day <=19){
         cout << "Your Zodiac sign is Capricornus \n";
     } else if (Month ==1 && Day >=20 || Month==2 && Day <=18){
@@ -52,14 +63,23 @@ int main()
     } else {Month ==11 && Day >=22 || Month ==12 && Day <=21;
         cout << "Your Zodiac sign is Sagittarius \n";
     }
-    //Ask if repeat the app or nah
-    char choice;
-    cout << "Do you want to start again? (y/n)";
-    cin >> choice;
-    if (choice =='y' || choice == 'Y'){
-        continue;
-    } else {break;}
+    } else if (options == 3){
+            switch (Year % 12){
+            case 0: cout << "Monkey \n"; break;
+            case 1: cout << "Rooster \n"; break;
+            case 2: cout << "Dog \n"; break;
+            case 3: cout << "Pig \n"; break;
+            case 4: cout << "Rat \n"; break;
+            case 5: cout << "Ox \n"; break;
+            case 6: cout << "Tiger \n"; break;
+            case 7: cout << "Rabbit \n"; break;
+            case 8: cout << "Dragon \n"; break;
+            case 9: cout << "Snake \n"; break;
+            case 10: cout << "Horse \n"; break;
+            case 11: cout << "Goat \n"; break;
+            default: cout << "Unknown \n";
+        }
     }
-    cout << "Thank you!";
+    }
     return 0;
 }
