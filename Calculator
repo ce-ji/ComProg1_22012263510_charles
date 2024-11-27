@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int options;
+    char choice;
+    double num1, num2, result;
+    do {
+    cout << "Enter Number 1: ";
+    cin >> num1;
+    cout << "Enter Number 2: ";
+    cin >> num2;
+
+    cout << "Select your operation: \n[1]Add\n[2]Sub\n[3]Multiplication\n[4]Division\n()options: ";
+    cin >> options;
+    if (options == 1){
+        cout << "The sum is: " << num1 + num2 <<endl;
+    }   else if (options == 2){
+        cout << "The difference is: " << num1 - num2 <<endl;
+    }   else if (options == 3){
+        cout << "The product is: " << num1 * num2 <<endl;
+    }   else {options == 4;
+        if (num2 != 0){
+            cout << "The quotient is: " << num1 / num2 <<endl;
+        }   else {
+            cout << "Error: Division by ZERO!!!" <<endl;
+        }
+    }
+        cout << "Do you want to start again? [y/n]: ";
+        cin >> choice;
+    }   while (choice == 'y' || choice =='Y');
+
+    cout << "Thank you";
+    return 0;
+}
